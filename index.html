@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="calci">
+        
+        <div id="scrn">
+           <form><input type="text" id="Display"></form>            
+
+        </div>
+        <div id="buttons">
+            <button id="btn1" onclick="clearDisplay('')">AC</button>
+            <button id="btn2" onclick="appendToDisplay('%')">%</button>
+            <button id="btn3" onclick="remove('Del')">Del</button>
+            <button id="btn4" onclick="appendToDisplay('/')">/</button>
+
+            <button id="btn5" onclick="appendToDisplay('7')">7</button>
+            <button id="btn6" onclick="appendToDisplay('8')">8</button>
+            <button id="btn7" onclick="appendToDisplay('9')">9</button>
+            <button id="btn8" onclick="appendToDisplay('*')">*</button>
+
+            <button id="btn9" onclick="appendToDisplay('4')">4</button>
+            <button id="btn10" onclick="appendToDisplay('5')">5</button>
+            <button id="btn11" onclick="appendToDisplay('6')">6</button>
+            <button id="btn12" onclick="appendToDisplay('-')">-</button>
+
+            <button id="btn13" onclick="appendToDisplay('1')">1</button>
+            <button id="btn14" onclick="appendToDisplay('2')">2</button>
+            <button id="btn15" onclick="appendToDisplay('3')">3</button>
+            <button id="btn16" onclick="appendToDisplay('+')">+</button>
+            
+            <button id="btn17" onclick="appendToDisplay('00')">00</button>
+            <button id="btn18" onclick="appendToDisplay('0')">0</button>
+            <button id="btn19" onclick="appendToDisplay('.')">.</button>
+            <button id="btn20" onclick="calculate('=')">=</button>
+        </div>
+
+    </div>
+
+    <script>
+        let calculator=document.getElementById("calci")
+        calculator.setAttribute("style","border:2px solid transparent;height:300px;width:200px;border-radius:5%;background-color:darkgray;box-shadow:2px 2px 3px 3px ")
+
+        let ip1=document.getElementById("Display")
+        ip1.setAttribute("style","height:44px;width:182px;border-radius:5px;border:none;text-align:right;font-size:2rem;background:")
+
+        function appendToDisplay(input){
+            ip1.value+=input;
+        }
+        function clearDisplay(){
+            ip1.value=""
+        }
+        function calculate(){
+        
+            ip1.value=eval(ip1.value)
+            
+        }
+        function remove(input){
+            currentValue=ip1.value;
+            currentValue=currentValue.slice(0,-1)
+            ip1.value=currentValue
+        }
+    
+
+
+        let screen=document.getElementById("scrn")
+        screen.setAttribute("style","border:2px solid none;height:50px;width:185px;margin-top:10px;margin-left:5px;border-radius:10px;")
+
+
+        let buttons=document.getElementById("buttons")
+        buttons.setAttribute("style","display:grid;grid-template-rows:repeat(5,40px);grid-template-columns:repeat(4,43px);row-gap:5px;column-gap:5px;padding:5px;")
+
+        let btn1=document.getElementById("btn1")
+        btn1.setAttribute("style","border-radius:10px;border:none;font-size:20px;background-color:red;box-shadow:1px 1px 1px 1px black")
+        
+
+        let btn2=document.getElementById("btn2")
+        btn2.setAttribute("style","border-radius:10px;border:none;font-size:20px;background-color:cyan;box-shadow:1px 1px 1px 1px black")
+       
+        
+
+        let btn3=document.getElementById("btn3")
+        btn3.setAttribute("style","border-radius:10px;border:none;font-size:20px;background-color:red;box-shadow:1px 1px 1px 1px black")
+
+        let btn4=document.getElementById("btn4")
+        btn4.setAttribute("style","border-radius:10px;border:none;font-size:20px;background-color:orange;box-shadow:1px 1px 1px 1px black")
+
+        let btn5=document.getElementById("btn5")
+        btn5.setAttribute("style","border-radius:10px;border:none;font-size:20px;box-shadow:1px 1px 1px 1px black")
+
+        let btn6=document.getElementById("btn6")
+        btn6.setAttribute("style","border-radius:10px;border:none;font-size:20px;box-shadow:1px 1px 1px 1px black")
+
+        let btn7=document.getElementById("btn7")
+        btn7.setAttribute("style","border-radius:10px;border:none;font-size:20px;box-shadow:1px 1px 1px 1px black")
+
+        let btn8=document.getElementById("btn8")
+        btn8.setAttribute("style","border-radius:10px;border:none;font-size:20px;background-color:orange;box-shadow:1px 1px 1px 1px black")
+
+        let btn9=document.getElementById("btn9")
+        btn9.setAttribute("style","border-radius:10px;border:none;font-size:20px;box-shadow:1px 1px 1px 1px black")
+
+        let btn10=document.getElementById("btn10")
+        btn10.setAttribute("style","border-radius:10px;border:none;font-size:20px;box-shadow:1px 1px 1px 1px black")
+    
+
+        let btn11=document.getElementById("btn11")
+        btn11.setAttribute("style","border-radius:10px;border:none;font-size:20px;box-shadow:1px 1px 1px 1px black")
+        
+
+        let btn12=document.getElementById("btn12")
+        btn12.setAttribute("style","border-radius:10px;border:none;font-size:20px;background-color:orange;box-shadow:1px 1px 1px 1px black")
+
+        let btn13=document.getElementById("btn13")
+        btn13.setAttribute("style","border-radius:10px;border:none;font-size:20px;box-shadow:1px 1px 1px 1px black")
+
+
+
+        let btn14=document.getElementById("btn14")
+        btn14.setAttribute("style","border-radius:10px;border:none;font-size:20px;box-shadow:1px 1px 1px 1px black")
+
+        let btn15=document.getElementById("btn15")
+        btn15.setAttribute("style","border-radius:10px;border:none;font-size:20px;box-shadow:1px 1px 1px 1px black")
+
+
+        let btn16=document.getElementById("btn16")
+        btn16.setAttribute("style","border-radius:10px;border:none;font-size:20px;background-color:orange;box-shadow:1px 1px 1px 1px black")
+
+        let btn17=document.getElementById("btn17")
+        btn17.setAttribute("style","border-radius:10px;border:none;font-size:20px;box-shadow:1px 1px 1px 1px black")
+
+        let btn18=document.getElementById("btn18")
+        btn18.setAttribute("style","border-radius:10px;border:none;font-size:20px;box-shadow:1px 1px 1px 1px black")
+
+        let btn19=document.getElementById("btn19")
+        btn19.setAttribute("style","border-radius:10px;border:none;font-size:20px;box-shadow:1px 1px 1px 1px black")
+
+        let btn20=document.getElementById("btn20")
+        btn20.setAttribute("style","border-radius:10px;border:none;font-size:20px;background-color:green;box-shadow:1px 1px 1px 1px black")
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
